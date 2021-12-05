@@ -61,19 +61,9 @@ class TelnetToSerial:
         import telnetlib
         self.tn = telnetlib.Telnet(ip, timeout=15)
         self.read_timeout = read_timeout
-        if b'Login as:' in self.tn.read_until(b'Login as:', timeout=read_timeout):
-            self.tn.write(bytes(user, 'ascii') + b"\r\n")
-
-            if b'Password:' in self.tn.read_until(b'Password:', timeout=read_timeout):
-                # needed because of internal implementation details of the telnet server
-                time.sleep(0.2)
-                self.tn.write(bytes(password, 'ascii') + b"\r\n")
-
-                if b'for more information.' in self.tn.read_until(b'Type "help()" for more information.', timeout=read_timeout):
-                    # login succesful
-                    from collections import deque
-                    self.fifo = deque()
-                    return
+        from collections import deque
+        self.fifo = deque()
+        return
 
         raise PyboardError('Failed to establish a telnet connection with the board')
 
