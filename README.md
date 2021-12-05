@@ -5,6 +5,9 @@ Install:
 
     sudo python3 setup.py install
 
+One of the robots with RP2040 MCU, that has wireless MicroPython REPL through ESP8285 module on front, connected serially to Pico4ML MCU:  
+![20211205_211412.part.25pc.jpg](20211205_211412.part.25pc.jpg)
+  
 # ampy replacement
 We have been working on the next version of ampy which will solve various problems with the current system. Based on a new modular architecture, it makes adding device support and features very simple using plugins. It also aims to support coding over WiFi for supported devices. This should eliminate the need to have a wired connection and improve reliability as well.
 [Here](https://github.com/curiouswala/ampy-2) is an alpha release please go ahead and play with it. Leave suggestions for a new name in the issue section. :)
