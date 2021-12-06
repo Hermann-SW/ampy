@@ -6,6 +6,16 @@ Install:
     sudo python3 setup.py install
 
 One of the robots with RP2040 MCU, that has wireless MicroPython REPL through ESP8285 module on front, connected serially to Pico4ML MCU:  
+
+    pi@raspberryPi400:~ $ ampy -p 192.168.178.103 ls
+    /boot.py
+    pi@raspberryPi400:~ $ echo -e "foo\nbar" > test.dat
+    pi@raspberryPi400:~ $ ampy -p 192.168.178.103 put test.dat 
+    pi@raspberryPi400:~ $ ampy -p 192.168.178.103 ls
+    /boot.py
+    /test.dat
+    pi@raspberryPi400:~ $ 
+
 ![20211205_211412.part.25pc.jpg](20211205_211412.part.25pc.jpg)
   
 # ampy replacement
